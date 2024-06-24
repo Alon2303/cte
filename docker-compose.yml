@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  auth-service:
+    build:
+      context: ./src/auth/auth-service
+    container_name: auth-service-container
+    ports:
+      - "3000:3000"
+    environment:
+      - CLIENT_ID=your_client_id
+      - SCOPE=your_requested_scope
+      - LOCAL_IP=192.168.1.121
+    volumes:
+      - ./certs:/usr/src/app/certs
+    depends_on:
+      - notification-service
+
+  notification-service:
+    build:
+      context: ./src/notifications/notification-service
+    container_name: notification-service-container
+    environment:
+      - CLIENT_ID=your_client_id
+      - SCOPE=your_requested_scope
+    depends_on:
+      - auth-service

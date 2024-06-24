@@ -1,0 +1,26 @@
+{
+  "name": "auth-microservices",
+  "version": "1.0.0",
+  "description": "This is  an auth machenism. there will be a server for auth and a server for notifications. also will use a db or a cache for storing user details and a message broker | http for communcations",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/auth/auth-service"
+  },
+  "author": "Alon Ofir",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.3.1",
+    "openssl-nodejs": "^1.0.5",
+    "qrcode": "^1.5.3",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
